@@ -4,32 +4,36 @@ from datetime import datetime
 from functools import reduce
 from typing import List
 
-import json5 as json5
 import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
+import sys
+import os
+from pathlib import Path
 
-def extract_json_to_df(paths_json: List[str], path_extract: str) -> None:
-    """
-    Extraction des fichiers json pour les concatener dans un fichier csv
+from extract_tasks import extract_json_to_csv
 
-    Parameters
-    ----------
-    paths_json : list des path de fichier json
-    path_extract: path de sauvegarde
-
-    Returns
-    -------
-    None
-    """
-    dfs = list()
-    for path in paths_json:
-        with open(path) as f:
-            data = json5.load(f)
-            dfs.append(pd.DataFrame(data))
-    df = pd.concat(dfs, ignore_index=True)
-    df.to_csv(path_extract, index=False)
+# def extract_json_to_df(paths_json: List[str], path_extract: str) -> None:
+#     """
+#     Extraction des fichiers json pour les concatener dans un fichier csv
+#
+#     Parameters
+#     ----------
+#     paths_json : list des path de fichier json
+#     path_extract: path de sauvegarde
+#
+#     Returns
+#     -------
+#     None
+#     """
+#     dfs = list()
+#     for path in paths_json:
+#         with open(path) as f:
+#             data = json5.load(f)
+#             dfs.append(pd.DataFrame(data))
+#     df = pd.concat(dfs, ignore_index=True)
+#     df.to_csv(path_extract, index=False)
 
 
 def extract_csv_to_df(paths_csv: List[str], path_extract: str) -> None:
@@ -121,7 +125,7 @@ with DAG('drugs_mapping',
          catchup=False) as dag:
 
     extract_json_to_df = PythonOperator(task_id='extract_json_to_df',
-                                        python_callable=extract_json_to_df,
+                                        python_callable=extract_json_to_csv.extract_json_to_df,
                                         op_kwargs={'paths_json': list_json_files, 'path_extract': path_extract_json},
                                         dag=dag)
 
