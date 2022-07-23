@@ -1,0 +1,92 @@
+{
+  "atropine": {
+    "The journal of maternal-fetal & neonatal medicine": {
+      "2020-01-03": [
+        ""
+      ]
+    }
+  },
+  "betamethasone": {
+    "The journal of maternal-fetal & neonatal medicine": {
+      "2020-01-01": [
+        10
+      ],
+      "2020-01-03": [
+        ""
+      ]
+    },
+    "Journal of back and musculoskeletal rehabilitation": {
+      "2020-01-01": [
+        "11"
+      ]
+    },
+    "H\u00f4pitaux Universitaires de Gen\u00e8ve": {
+      "2020-01-01": [
+        "NCT04153396"
+      ]
+    }
+  },
+  "diphenhydramine": {
+    "Journal of emergency nursing": {
+      "2020-01-01": [
+        "NCT01967433",
+        "NCT04189588",
+        "NCT04237091"
+      ],
+      "2019-01-01": [
+        2
+      ]
+    },
+    "The Journal of pediatrics": {
+      "2019-02-01": [
+        3
+      ]
+    }
+  },
+  "epinephrine": {
+    "The journal of allergy and clinical immunology. In practice": {
+      "2020-01-03": [
+        8
+      ],
+      "2020-01-02": [
+        7
+      ]
+    },
+    "Journal of emergency nursing": {
+      "2020-04-27": [
+        "NCT04188184"
+      ]
+    }
+  },
+  "ethanol": {
+    "Psychopharmacology": {
+      "2020-01-01": [
+        6
+      ]
+    }
+  },
+  "isoprenaline": {
+    "Journal of photochemistry and photobiology. B, Biology": {
+      "2020-01-01": [
+        9
+      ]
+    }
+  },
+  "tetracycline": {
+    "American journal of veterinary research": {
+      "2020-02-01": [
+        5
+      ]
+    },
+    "Psychopharmacology": {
+      "2020-01-01": [
+        6
+      ]
+    },
+    "Journal of food protection": {
+      "2020-01-01": [
+        4
+      ]
+    }
+  }
+}

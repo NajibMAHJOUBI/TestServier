@@ -1,0 +1,11 @@
+{
+    "attendance": 75,
+    "class": 9,
+    "email": "jessa@pynative.com",
+    "id": 1,
+    "name": "Jessa Duggar",
+    "subjects": [
+        "English",
+        "Geometry"
+    ]
+}
