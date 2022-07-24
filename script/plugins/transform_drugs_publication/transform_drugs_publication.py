@@ -1,28 +1,45 @@
+import os
 import re
 from functools import reduce
 from typing import List
+from typing import TYPE_CHECKING
 
 import pandas as pd
+
+if TYPE_CHECKING:
+    from airflow.models.taskinstance import TaskInstance
 
 
 def merge_dict(dict1, dict2):
     merged = dict()
     for journal in set(list(dict1.keys()) + list(dict2.keys())):
         merged[journal] = dict()
-        for date in set(list(dict1.get(journal, {}).keys()) +   list(dict2.get(journal, {}).keys())):
+        for date in set(list(dict1.get(journal, {}).keys()) + list(dict2.get(journal, {}).keys())):
             merged[journal][date] = dict1.get(journal, {}).get(date, []) + dict2.get(journal, {}).get(date, [])
     return merged
 
 
 def reduce_dict(series):
-    return reduce(lambda dict1, dict2:merge_dict(dict1, dict2), series)
+    return reduce(lambda dict1, dict2: merge_dict(dict1, dict2), series)
 
 
-def transform_drugs_publication(path_list: List[str], path_transform: str):
-    drugs = pd.read_csv('/home/data-ops/Documents/Github/TestServier/data/drugs.csv')
-    drugs_list = drugs['drug'].str.lower().values.tolist()
+def get_drugs_list(path_data: str) -> List[str]:
+    drugs = pd.read_csv(path_data)
+    return drugs['drug'].str.lower().values.tolist()
 
-    data = pd.concat([pd.read_csv(path) for path in path_list], ignore_index=True)
+
+def get_list_extract(ti: 'TaskInstance') -> List[str]:
+    list_files = list()
+    list_files.append(ti.xcom_pull(task_ids='extract_json_to_df', key='json'))
+    list_files.append(ti.xcom_pull(task_ids='extract_csv_to_df', key='csv'))
+    return list_files
+
+
+def transform_drugs_publication(path_drugs: str, path_data: str, path_work: str, ti: 'TaskInstance'):
+    drugs_list = get_drugs_list(path_drugs)
+    print(drugs_list)
+
+    data = pd.concat([pd.read_csv(path) for path in get_list_extract(ti)], ignore_index=True)
 
     data['date'] = pd.to_datetime(data['date']).astype(str)
 
@@ -46,4 +63,8 @@ def transform_drugs_publication(path_list: List[str], path_transform: str):
 
     data = data.groupby('drugs').agg({'values': reduce_dict}).reset_index()
 
+    path_transform = os.path.join(path_work, "transform_drugs.csv")
+
     data.to_csv(path_transform, index=False)
+
+    ti.xcom_push(key='transform', value=path_transform)
