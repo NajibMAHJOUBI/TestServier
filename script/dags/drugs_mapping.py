@@ -40,7 +40,6 @@ with DAG('drugs_mapping',
     transform_drugs_publication = PythonOperator(task_id='transform_drugs_publication',
                                                  python_callable=transform_drugs_publication,
                                                  op_kwargs={'path_drugs': path_drugs,
-                                                            'path_data': path_data,
                                                             'path_work': path_work},
                                                  dag=dag)
 
