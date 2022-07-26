@@ -28,6 +28,6 @@ if __name__ == '__main__':
     path = '../../drugs_mapping/drugs_mapping.json'
     publications, max_medicaments = publication_citations(path)
 
-    print(f"Publication citant le plus de médicaments distincts ({max_medicaments}) : ")
+    print(f"\nPublication citant le plus de médicaments distincts ({max_medicaments}) : ")
     for publication in publications:
-        print(f"  {publication}")
+        print(f"   - {publication}")
