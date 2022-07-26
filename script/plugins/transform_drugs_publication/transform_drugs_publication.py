@@ -31,7 +31,7 @@ def transform_drugs_publication(path_drugs: str, path_work: str, ti: 'TaskInstan
 
     data = pd.concat([pd.read_csv(path) for path in get_list_extract(ti)], ignore_index=True)
 
-    data['id'] = pd.Series([uuid.uuid4() for _ in range(data.shape[0])])
+    # data['id'] = pd.Series([uuid.uuid4() for _ in range(data.shape[0])])
 
     data['date'] = pd.to_datetime(data['date']).astype(str)
 
