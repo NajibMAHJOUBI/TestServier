@@ -73,3 +73,34 @@ Les journaux cités le plus de médicaments distincts (2 médicaments) sont les 
    - Journal of emergency nursing
    - Psychopharmacology
 
+## Test SQL
+
+Cette partie du test a été réalisé en utilisant PostgreSQL.
+
+Les deux tables ont été crée dans une base de données 'Servier' et chargées avec les données.
+
+Dans l'énoncé des tests, il est demandé de mettre des filtres sur les données de ventes de l'année 2019. Toutefois les données 
+sont uniquement que des dates de l'année 2020. Donc le filtre a été modifié pour pouvoir retourner un résultat en filtrant 
+les ventes 2020.
+
+### Question 1 
+
+Chiffre d’affaires, jour par jour, du 1er janvier 2020 au 31 décembre 2020 trié sur la date à laquelle 
+la commande a été passée.
+
+[Requêtes SQL](sql/exercise_01.sql)
+
+Résultat de la requête: 
+
+![512x397,20%](images/exo_01.png)
+
+
+### Question 2
+
+Par client et sur la période allant du 1er janvier 2020 au 31 décembre 2020, les ventes meuble et déco réalisées.
+
+[Requêtes SQL](sql/exercise_02.sql)
+
+Résultat de la requête: 
+
+![512x397,20%](images/exo_02.png)

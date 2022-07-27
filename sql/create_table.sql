@@ -34,4 +34,4 @@ INSERT INTO Product_Nomenclature (product_id, product_type, product_name)
        VALUES (490756, 'MEUBLE', 'Chaise'),
               (389728, 'DECO', 'Boule de Noël'),
               (549380, 'MEUBLE', 'Canapé'),
-              (549380, 'DECO', 'Mug') ; 
+              (293718, 'DECO', 'Mug') ; 

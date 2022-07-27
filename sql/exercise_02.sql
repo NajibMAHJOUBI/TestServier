@@ -12,5 +12,5 @@ SELECT
   FROM Transaction AS t
   INNER JOIN Product_Nomenclature AS p
     ON t.prop_id = p.product_id
---WHERE date BETWEEN '2019-01-01' AND '2019-12-31'    
+WHERE date BETWEEN '2020-01-01' AND '2020-12-31'    
 GROUP BY t.client_id ; 
