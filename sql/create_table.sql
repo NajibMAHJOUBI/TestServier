@@ -1,3 +1,8 @@
+
+/*
+  Création de la table Transaction
+*/
+
 CREATE TABLE IF NOT EXISTS Transaction (
    date DATE NOT NULL,
    order_id INT NOT NULL,
@@ -15,7 +20,10 @@ INSERT INTO Transaction (date, order_id, client_id, prop_id, prod_price, prod_qt
               ('01-01-2020', 3456, 845, 549380, 300, 1),
               ('01-01-2020', 3456, 845, 293718, 10, 6) ;  
               
-              
+/*
+  Création de la table Product_Nomenclature
+*/
+
 CREATE TABLE IF NOT EXISTS Product_Nomenclature 
  (product_id INT NOT NULL, 
   product_type CHARACTER VARYING(6), 
