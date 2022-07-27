@@ -56,6 +56,20 @@ Pour chaque journal, on liste les publications avec la date de publication (key 
 ![512x397,20%](images/drug_mapping.png)
 
 
-![Employee data](images/drug_mapping.png "Employee Data title")
+Le fichier résultat au format JSON est disponible [ici](drugs_mapping/drugs_mapping.json).
 
+
+
+## Feature : Journal mentionnant le plus de médicaments différents
+
+Ce fichier JSON est utilisé ensuite pour déterminer les journals ayant mentionné le plus de médicaments distincts. 
+
+Cette feature est faite dans le script python: [journal_citation.py](script/features/journal_citations.py).
+
+
+Les journaux cités le plus de médicaments distincts (2 médicaments ) sont les suivants : 
+
+   - The journal of maternal-fetal & neonatal medicine
+   - Journal of emergency nursing
+   - Psychopharmacology
 
