@@ -42,3 +42,15 @@ Cette étape consiste à standardiser l'ensemble des données et concaténer les
 L'analyse des titres des publications permet de déterminer si un ou plusieurs médicaments est cité. 
 
 ### Load
+
+L'épate de chargement est constitué de la t^che **load_to_json**.
+Cette étape met en forme la table des données finales issues de la tâche précédente et la met en forme avant de la sauvegarder au format CSV. 
+
+## Donnée de sortie
+
+La donnée de sortie donne le mapping des médicaments (Key 'Medicament'). 
+Pour chaque médicament, la clé 'Citation' donne les liens du médicament aux citations dans les publications (key 'Citation'). 
+Chaque journal ayant cité au moins une fois un médicament est lié à ce médicament (key 'Journal').
+Pour chaque journal, on liste les publications avec la date de publication (key 'Date') et le titre de la publication (key 'Titre').
+
+![Alt text](images/drug_mapping.png "Optional title")
