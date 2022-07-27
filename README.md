@@ -58,5 +58,4 @@ Pour chaque journal, on liste les publications avec la date de publication (key 
 
 ![Employee data](images/drug_mapping.png "Employee Data title")
 
-<img src="images/drug_mapping.png" width=300 align=right>
 
