@@ -1,7 +1,7 @@
-# TestServier
+# Test Servier
 
 
-## Construction d'un pipeline: graphe de liaison médicaments - publications
+## Construction d'un pipeline : graphe de liaison médicaments - publications
 
 ## Objectif
 
