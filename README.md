@@ -53,4 +53,10 @@ Pour chaque médicament, la clé 'Citation' donne les liens du médicament aux c
 Chaque journal ayant cité au moins une fois un médicament est lié à ce médicament (key 'Journal').
 Pour chaque journal, on liste les publications avec la date de publication (key 'Date') et le titre de la publication (key 'Titre').
 
-![Alt text](images/drug_mapping.png "Optional title")
+![512x397,20%](images/drug_mapping.png)
+
+
+![Employee data](images/drug_mapping.png "Employee Data title")
+
+<img src="images/drug_mapping.png" width=300 align=right>
+
